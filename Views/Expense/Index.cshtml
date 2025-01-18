@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Expenses";
+}
+@model List<Expense>
+
+<h1>Index Page - Expenses</h1>
+<a asp-controller="Expense" asp-action="CreateEditExpense" class="btn btn-primary">Create / Edit Expense</a>
+<table class="table">
+@{
+   
+    foreach (var expense in Model)
+    {
+        <tr>
+        <td>@expense.Id</td>
+        <td>@expense.Description</td>
+        <td>@expense.Value</td>
+        </tr>
+    } 
+}
+</table>
