@@ -7,10 +7,14 @@
 </div>
 <form asp-action="CreateEditExpenseForm" asp-controller="Expense" method="POST">
     <!-- <label>Id</label> -->
-<input class="form-control" type="hidden" name="Id" value="Id" placeholder="0" asp-for="Id"  />
+    <input class="form-control" type="hidden" name="Id"  placeholder="0" asp-for="Id"  />
     <label class="mt-4">Value $</label>
-    <input class="form-control" type="number" step="0.01" name="Value" value="Id" placeholder="0" asp-for="Value"  />
+    <input class="form-control" type="number" step="0.01" name="Value"
+            placeholder="0" asp-for="Value"  />
     <label class="mt-4">Description</label>
-    <input class="form-control" type="text"  name="Description"  placeholder="Description" asp-for="Description"  />
-<button class="btn btn-primary mt-4" type="submit">OK</button>
+    <input class="form-control" type="text"  name="Description"
+           placeholder="Description" asp-for="Description"
+
+    />
+    <button class="btn btn-primary mt-4" type="submit">OK</button>
 </form>
