@@ -4,6 +4,9 @@
 @model List<Expense>
 
 <h1>Index Page - Expenses</h1>
+<hr />
+<h3>Total Expenses : @ViewBag.totalExpenses</h3>
+<hr/>
 <a asp-controller="Expense" asp-action="CreateEditExpense" class="btn btn-primary">Create / Edit Expense</a>
 <table class="table">
 @{

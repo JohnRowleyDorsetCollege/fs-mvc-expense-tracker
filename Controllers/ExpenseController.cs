@@ -17,7 +17,10 @@ public class ExpenseController : Controller
     public IActionResult Index()
     {
         var expenses = _context.Expenses.ToList();
+
+        var totalExpenses = expenses.Sum(x => x.Value);
        
+        ViewBag.TotalExpenses = totalExpenses;
         return View(expenses);
     }
     
