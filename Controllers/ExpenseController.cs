@@ -1,5 +1,7 @@
+using ExpenseTracker.Helpers;
 using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ExpenseTracker.Controllers;
 
@@ -26,13 +28,22 @@ public class ExpenseController : Controller
     
     public IActionResult CreateEditExpense(int? Id)
     {
-       _logger.LogInformation("Create Expense");
-       if (Id != null)
-       {
-           var item = _context.Expenses.Find(Id);
-           return View(item);
-       }
-       return View();
+        // List<SelectListItem> expenseCategories = new List<SelectListItem>();
+        //
+        // foreach (var currentExpenseCategory in HelperExpenseCategories.GetAllCategories())
+        // {
+        //     expenseCategories.Add(new SelectListItem()
+        //         { Value = currentExpenseCategory.Id.ToString(), Text = currentExpenseCategory.Name });
+        // }
+        //
+        // ViewBag.ExpenseCategories = expenseCategories;
+        if (Id != null)
+        {
+            var item = _context.Expenses.Find(Id);
+            return View(item);
+        }
+
+        return View();
     }
     
     public IActionResult DeleteExpense(int Id)
